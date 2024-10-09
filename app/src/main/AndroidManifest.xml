@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Multimedia"
         tools:targetApi="31">
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".ui.LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,9 +25,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.HomeActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
