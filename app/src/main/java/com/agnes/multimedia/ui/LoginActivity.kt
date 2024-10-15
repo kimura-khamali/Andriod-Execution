@@ -34,7 +34,8 @@ class LoginActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences(Constants.PREFS,Context.MODE_PRIVATE)
         val token = sharedPreferences.getString(Constants.ACCESS_TOKEN,"")
         if(token!!.isNotBlank()){
-            startActivity(Intent(this,HomeActivity::class.java))
+            startActivity(Intent(this,PhotoCaptureActivity::class.java))
+            finish()
         }
     }
 
@@ -48,8 +49,8 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.loginLiveData.observe(this){loginResponse ->
             Toast.makeText(this,"Login Successful",Toast.LENGTH_LONG).show()
             persistLogin(loginResponse)
-            startActivity(Intent(this,HomeActivity::class.java))
-
+            startActivity(Intent(this,PhotoCaptureActivity::class.java))
+            finish()
         }
     }
     private fun persistLogin(loginResponse: LoginResponse){
